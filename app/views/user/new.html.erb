@@ -1,0 +1,37 @@
+<h1>Добавление нового пользователя</h1>
+<%= form_with scope: :users, local: true do |form| %>
+  <p>
+    <%= form.label :Имя %><br>
+    <%= form.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= form.label :Фамилия %><br>
+    <%= form.text_area :last_name %>
+  </p>
+
+    <p>
+      <%= form.label :Почта %><br>
+      <%= form.text_area :email %>
+    </p>
+
+      <p>
+        <%= form.label :Пароль %><br>
+        <%= form.text_area :password %>
+      </p>
+
+      <p>
+        <%= form.label :Администратор %><br>
+
+        <%= radio_button_tag(:admin, "admin") %>
+        <%= label_tag(:admin, "Да") %>
+        <%= radio_button_tag(:admin, "nadmin") %>
+        <%= label_tag(:nadmin, "Нет") %>
+
+      </p>
+
+  <p>
+
+        <%= form.submit value="Сохранить" %>
+  </p>
+<% end %>

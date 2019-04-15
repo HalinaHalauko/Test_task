@@ -1,0 +1,27 @@
+<h1>Добавление нового проекта</h1>
+<%= form_with scope: :project, local: true do |form| %>
+  <p>
+    <%= form.label :Название %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :Описание %><br>
+    <%= form.text_area :summary %>
+  </p>
+
+  <p>
+    <%= form.label :Начало %><br>
+    <%= form.date_field :start_date %>
+  </p>
+
+  <p>
+    <%= form.label :Окончание %><br>
+    <%= form.date_field :end_date %>
+  </p>
+
+  <p>
+
+        <%= form.submit value="Сохранить" %>
+  </p>
+<% end %>

@@ -1,0 +1,28 @@
+<h1>Добавление новой задачи</h1>
+<%= form_with scope: :tasks, local: true do |form| %>
+  <p>
+    <%= form.label :Название %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :Описание %><br>
+    <%= form.text_area :description %>
+  </p>
+
+      <p>
+        <%= form.label :Статус %><br>
+
+        <%= radio_button_tag(:status, "new") %>
+        <%= label_tag(:new, "Новая") %>
+        <%= radio_button_tag(:status, "in progress") %>
+        <%= label_tag(:inprogress, "Выполняется") %>
+        <%= radio_button_tag(:status, "done") %>
+        <%= label_tag(:done, "Выполнена") %>
+      </p>
+
+  <p>
+
+        <%= form.submit value="Сохранить" %>
+  </p>
+<% end %>
